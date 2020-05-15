@@ -1,0 +1,22 @@
+{
+ "name": "sails-hook-globaltech-auth-jws",
+ "version": "0.0.1",
+ "description": "Add the necessary structure and services for authentication based on JSON WEB TOKEN.",
+ "main": "index.js",
+ "sails": {
+  "isHook": true,
+  "hookName": "auth"
+ },
+ "dependencies": {
+  "jsonwebtoken": "^8.5.1"
+ },
+ "devDependencies": {
+  "mocha": "^7.1.2",
+  "sails": "^1.2.4",
+  "sails-hook-organics": "^2.2.0"
+ },
+ "scripts": {
+  "test": "node node_modules/mocha/bin/mocha -R spec"
+ },
+ "publishConfig": { "registry": "https://registry.npmjs.com/" }
+}

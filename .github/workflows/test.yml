@@ -1,0 +1,26 @@
+name: BUILD&TEST
+on:
+  push:
+    branches:
+      - master
+      - staging
+  pull_request:
+    branches:
+      - master
+      - staging
+jobs:
+  build:
+    name: BUILD&TEST
+    runs-on: ubuntu-latest
+    steps:
+      - name: Getting Code
+        uses: actions/checkout@v2
+      - name: Setting Up Nodejs for npm.com
+        uses: actions/setup-node@v1
+        with:
+          node-version: '10.x'
+          registry-url: 'https://registry.npmjs.com/'
+      - name: Installing packages
+        run: npm install
+      - name: Running tests
+        run: npm test
